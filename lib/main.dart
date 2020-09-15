@@ -1,6 +1,8 @@
-import 'package:apna_dhaba/category_meals_screen.dart';
+import 'package:apna_dhaba/screens/category_meals_screen.dart';
+
 import 'package:flutter/material.dart';
-import './categories_screen.dart';
+import 'screens/categories_screen.dart';
+import 'screens/profile_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,12 +33,15 @@ class MyApp extends StatelessWidget {
       routes: {
         // This is the homeScreen route that we can configure instead of "home:" argument
         '/': (ctx) {
-          CategoriesScreen();
+          return CategoriesScreen();
+        },
+        '/profile': (ctx) {
+          return ProfileScreen();
         },
 
         // This is the Category Screen route usig the static const property
         CategoryMealsScreen.routeName: (ctx) {
-          CategoryMealsScreen();
+          return CategoryMealsScreen();
         }
       },
     );

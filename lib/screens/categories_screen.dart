@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import './dummy_data.dart';
-import './category_item.dart';
+import '../dummy_data.dart';
+import '../widgets/category_item.dart';
+import '../widgets/drawer.dart';
 
 class CategoriesScreen extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class CategoriesScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Apna Dhaba"),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
       body: GridView(
           padding: EdgeInsets.all(15),
           children: <Widget>[
