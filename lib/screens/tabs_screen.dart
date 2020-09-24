@@ -19,7 +19,8 @@ class TabsScreen extends StatefulWidget {
   static const routeName = '/';
 
   List<Meal> _favourites;
-  TabsScreen(this._favourites);
+  Function toggleFavs;
+  TabsScreen(this._favourites, this.toggleFavs);
   @override
   _TabsScreenState createState() => _TabsScreenState();
 }
@@ -43,7 +44,7 @@ class _TabsScreenState extends State<TabsScreen> {
           ),
           body: TabBarView(children: [
             CategoriesScreen(),
-            FavouritesScreen(widget._favourites)
+            FavouritesScreen(widget._favourites, widget.toggleFavs)
           ]),
         ));
   }

@@ -1,3 +1,5 @@
+// A LOTTTT of work can be done on this application
+
 import './dummy_data.dart';
 import './screens/category_meals_screen.dart';
 import 'models/meal.dart';
@@ -88,7 +90,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         // This is the homeScreen route that we can configure instead of "home:" argument
         '/': (ctx) {
-          return TabsScreen(_favourites);
+          return TabsScreen(_favourites, _toggleFavourite);
         },
         '/profile': (ctx) {
           return ProfileScreen();

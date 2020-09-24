@@ -33,18 +33,38 @@ class MealsDetailScreen extends StatelessWidget {
         body: SingleChildScrollView(
             child: Column(children: <Widget>[
           Image.network(selectedMeal.imageUrl),
+          Text('Ingredients', style: Theme.of(context).textTheme.headline4),
           Container(
               height: 300,
               child: Card(
-                child: Center(
-                  child: Text('uogougoug'),
+                child: ListView.builder(
+                  itemCount: selectedMeal.ingredients.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      leading: CircleAvatar(
+                        child: Text('${index + 1}'),
+                      ),
+                      title: Text(selectedMeal.ingredients[index]),
+                    );
+                  },
                 ),
               )),
+          Text('Steps', style: Theme.of(context).textTheme.headline4),
           Container(
               height: 300,
               child: Card(
                 child: Center(
-                  child: Text('uogougoug'),
+                  child: ListView.builder(
+                    itemCount: selectedMeal.steps.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        leading: CircleAvatar(
+                          child: Text('${index + 1}'),
+                        ),
+                        title: Text(selectedMeal.steps[index]),
+                      );
+                    },
+                  ),
                 ),
               )),
         ])));
