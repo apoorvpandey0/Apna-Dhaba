@@ -1,4 +1,8 @@
+import '../screens/tabs_screen.dart';
+import '../screens/filters_screen.dart';
 import 'package:flutter/material.dart';
+
+// import 'package:fluttertoast/fluttertoast.dart';
 
 class MyDrawer extends StatelessWidget {
   bool _isSelected = false;
@@ -53,30 +57,34 @@ class MyDrawer extends StatelessWidget {
 
             // Internships and settings tab section
             ListTile(
-              leading: Icon(Icons.send),
-              title: Text('Internships'),
-              onTap: () {},
-              selected: _isSelected,
+              leading: Icon(
+                Icons.restaurant,
+                size: 26,
+              ),
+              title: Text('Meals',
+                  style: TextStyle(
+                    fontSize: 22,
+                  )),
+              onTap: () {
+                Navigator.of(context)
+                    .pushReplacementNamed(TabsScreen.routeName);
+              },
+              selected: false,
             ),
             ListTile(
-              leading: Icon(Icons.assignment),
-              title: Text('My Applications'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.message),
-              title: Text('Messages'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.assignment_ind),
-              title: Text('Edit Resume'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {},
+              leading: Icon(
+                Icons.filter_1,
+                size: 26,
+              ),
+              title: Text('Filters',
+                  style: TextStyle(
+                    fontSize: 22,
+                  )),
+              onTap: () {
+                Navigator.of(context)
+                    .pushReplacementNamed(FiltersScreen.routeName);
+              },
+              selected: false,
             ),
             ListTile(
               leading: Icon(Icons.call),
